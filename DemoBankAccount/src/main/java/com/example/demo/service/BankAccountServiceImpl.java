@@ -26,4 +26,25 @@ public class BankAccountServiceImpl implements BankAccountService {
 		return br.findAll();
 	}
 
+	@Override
+	public void delete(int accNumber) {
+		// TODO Auto-generated method stub
+		br.deleteById(accNumber);
+		
+	}
+
+	@Override
+	public BankAccount update(int accNumber, BankAccount b) {
+		// TODO Auto-generated method stub
+		b.setAccNumber(accNumber);
+		return br.save(b);
+	}
+
+	@Override
+	public void addAll(List<BankAccount> b) {
+		// TODO Auto-generated method stub
+		br.saveAll(b);
+		
+	}
+
 }
