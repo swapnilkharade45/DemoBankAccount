@@ -36,7 +36,7 @@ public class BankAcoountController {
 	}
 	
 	@PutMapping("update/{existingId}")
-	public BankAccount updateBankAccount(@PathVariable("existingId") int accNumber, BankAccount b ) {
+	public BankAccount updateBankAccount(@PathVariable("existingId") int accNumber, @RequestBody BankAccount b ) {
 		return bs.update(accNumber, b);
 	}
 	
